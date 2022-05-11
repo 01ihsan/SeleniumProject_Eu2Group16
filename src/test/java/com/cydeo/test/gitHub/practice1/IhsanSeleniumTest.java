@@ -12,7 +12,6 @@ public class IhsanSeleniumTest {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com");
         WebElement agreeButton = driver.findElement(By.id("L2AGLb"));
-        agreeButton.click();
-
+        agreeButton.click(); //click button
     }
 }
