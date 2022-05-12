@@ -18,6 +18,5 @@ public class IhsanSeleniumTest {
         WebElement agreeButton = driver.findElement(By.id("L2AGLb"));
         agreeButton.click();
         driver.navigate().refresh();
-
     }
 }
