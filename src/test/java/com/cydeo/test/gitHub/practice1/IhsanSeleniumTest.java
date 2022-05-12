@@ -15,6 +15,6 @@ public class IhsanSeleniumTest {
         agreeButton.click();
         driver.navigate().refresh();
 
-
+        driver.close();
     }
 }
