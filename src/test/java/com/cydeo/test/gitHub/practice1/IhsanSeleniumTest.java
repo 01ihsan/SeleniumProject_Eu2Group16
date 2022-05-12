@@ -6,13 +6,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class IhsanSeleniumTest {
     public static void main(String[] args) {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); // Wait up to 5 seconds if there is a problem. Day4 Selenium Class.
         driver.get("https://www.google.com");
         WebElement agreeButton = driver.findElement(By.id("L2AGLb"));
-        agreeButton.click();
-        driver.navigate().refresh();
+        agreeButton.click(); //click button
+
+
+        // I want chocolate
     }
 }
