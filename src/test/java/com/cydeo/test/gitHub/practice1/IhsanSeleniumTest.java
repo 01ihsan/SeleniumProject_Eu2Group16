@@ -17,5 +17,8 @@ public class IhsanSeleniumTest {
         driver.get("https://www.google.com");
         WebElement agreeButton = driver.findElement(By.id("L2AGLb"));
         agreeButton.click(); //click button
+
+
+        // I want chocolate
     }
 }
