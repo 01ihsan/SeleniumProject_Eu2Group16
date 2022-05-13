@@ -17,5 +17,7 @@ public class IhsanSeleniumTest {
         driver.get("https://www.google.com");
         WebElement agreeButton = driver.findElement(By.id("L2AGLb"));
         agreeButton.click(); //click button
+
+        //Select dateDropdown=new Select(driver.findElement(By.id("dropdown")));
     }
 }
