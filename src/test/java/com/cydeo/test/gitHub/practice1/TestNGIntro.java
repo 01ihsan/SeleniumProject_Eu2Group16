@@ -25,6 +25,6 @@ public class TestNGIntro {
     @Test
     public void test2(){
         System.out.println("test2 run..");
-        Assert.assertTrue("a".equals("a"), "title is not matching");
+        Assert.assertEquals("a", "a", "title is not matching");
     }
 }
