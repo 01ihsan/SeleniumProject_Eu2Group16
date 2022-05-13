@@ -31,7 +31,7 @@ public class T4_SimpleDropdowns {
         WebElement currentlySelectedOption = simpleDropdown.getFirstSelectedOption();
         String actualSimpleDropDownText = currentlySelectedOption.getText();
         String expectedSimpleDropDownText = "Please select an option";
-        Assert.assertEquals(expectedSimpleDropDownText,actualSimpleDropDownText);
+        Assert.assertEquals(actualSimpleDropDownText,expectedSimpleDropDownText);
         Select stateDropDown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
         String expectedStateDropDown = "Select a State";
         String actualStateDropDown= stateDropDown.getFirstSelectedOption().getText();
