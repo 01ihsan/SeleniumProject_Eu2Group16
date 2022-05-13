@@ -1,5 +1,6 @@
 package com.cydeo.test.gitHub.practice1;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -24,5 +25,6 @@ public class TestNG_Intro {
     @Test
     public void test2(){
         System.out.println("test2 run..");
+        Assert.assertTrue("a".equals("a"), "title is not matching");
     }
 }
