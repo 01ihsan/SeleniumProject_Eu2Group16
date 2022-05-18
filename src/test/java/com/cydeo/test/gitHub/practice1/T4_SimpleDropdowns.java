@@ -37,4 +37,9 @@ public class T4_SimpleDropdowns {
         String actualStateDropDown= stateDropDown.getFirstSelectedOption().getText();
         Assert.assertEquals(actualStateDropDown,expectedStateDropDown);
     }
+    @Test
+    public void alertsInframes() {
+        driver.get("https://practice.cydeo.com/javascript_alerts");
+        Assert.assertEquals("a","a");
+    }
 }
