@@ -39,7 +39,8 @@ public class T4_SimpleDropdowns {
     }
     @Test
     public void alertsInframes() {
-        driver.get("https://practice.cydeo.com/javascript_alerts");
+        driver.get("https://practice.cydeo.com/iframe");
+        System.out.println(driver.findElement(By.xpath("//*[@id=\"content\"]/div/h3")).getText());
         Assert.assertEquals("a","a");
     }
 }
