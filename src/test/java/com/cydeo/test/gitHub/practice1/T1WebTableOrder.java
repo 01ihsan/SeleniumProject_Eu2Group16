@@ -1,5 +1,6 @@
 package com.cydeo.test.gitHub.practice1;
 
+import com.cydeo.test.gitHub.utilities.WebTableUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,4 +34,12 @@ public class T1WebTableOrder {
         Assert.assertEquals("12/31/2021",bobMartinDate.getText());
         System.out.println("12/31/2021" +" - "+ bobMartinDate.getText());
     }
+    @Test
+    public void test2(){
+        String customerOrderDate = WebTableUtils.returnOrderDate(driver,"Alexandra Gray");
+        System.out.println(customerOrderDate);
+        String customerOrderDate2 = WebTableUtils.returnOrderDate(driver,"John Doe");
+        System.out.println(customerOrderDate2);
+    }
+
 }
