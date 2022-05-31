@@ -1,5 +1,7 @@
 package com.cydeo.test.gitHub.practice1;
 
+import com.cydeo.test.gitHub.utilities.ConfigurationReader;
+import com.cydeo.test.gitHub.utilities.WebDriverFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -17,8 +19,8 @@ public class ConfigPractice {
 
     @BeforeMethod
     public void setupMethod(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        String browserType = ConfigurationReader.getProperty("browser");
+        driver = WebDriverFactory.getDriver(browserType);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.google.com");
@@ -28,11 +30,11 @@ public class ConfigPractice {
     @Test
     public void google_search_test(){
         WebElement searchBox = driver.findElement(By.xpath("//input[@name='q']"));
-
-        searchBox.sendKeys("apple"+ Keys.ENTER);
+        String searchItem = ConfigurationReader.getProperty("searchItem");
+        searchBox.sendKeys(searchItem+ Keys.ENTER);
 
         String currentTitle = driver.getTitle();
-        Assert.assertEquals("apple - Google Search",currentTitle);
+        Assert.assertEquals(searchItem+" - Google Search",currentTitle);
 
     }
 
