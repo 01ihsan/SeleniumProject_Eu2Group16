@@ -1,5 +1,6 @@
 package com.cydeo.test.gitHub.practice1;
 
+import com.cydeo.test.base.Testbase;
 import com.cydeo.test.gitHub.utilities.WebTableUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -12,19 +13,10 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class T1WebTableOrder {
-    public WebDriver driver;
-
-    @BeforeMethod
-    public void setupMethod(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://practice.cydeo.com/web-tables");
-    }
+public class T1WebTableOrder extends Testbase {
     @Test
     public void nameVerify_test(){
+        driver.get("https://practice.cydeo.com/web-tables");
         WebElement bobMartinCell =
                 driver.findElement(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//td[.='Bob Martin']"));
         System.out.println("Bob Martin" +" - "+bobMartinCell.getText());
@@ -36,6 +28,7 @@ public class T1WebTableOrder {
     }
     @Test
     public void test2(){
+        driver.get("https://practice.cydeo.com/web-tables");
         String customerOrderDate = WebTableUtils.returnOrderDate(driver,"Alexandra Gray");
         System.out.println(customerOrderDate);
         String customerOrderDate2 = WebTableUtils.returnOrderDate(driver,"John Doe");
@@ -43,6 +36,7 @@ public class T1WebTableOrder {
     }
     @Test
     public void test3(){
+        driver.get("https://practice.cydeo.com/web-tables");
         WebTableUtils.orderVerify(driver,"Bart Fisher","01/16/2021");
     }
 
