@@ -6,5 +6,13 @@ public class Singleton {
 
     private static String word;
 
-
+    public static String getWord(){
+        if(word==null){
+            System.out.println("First time call. Word object is null");
+            word = "something";
+        }
+        else
+            System.out.println("Word has a value.");
+        return word;
+    }
 }
