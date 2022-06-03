@@ -1,6 +1,7 @@
 package com.cydeo.test.gitHub.practice1;
 
 import com.cydeo.test.gitHub.utilities.ConfigurationReader;
+import com.cydeo.test.gitHub.utilities.Driver;
 import com.cydeo.test.gitHub.utilities.WebDriverFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -15,26 +16,28 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class ConfigPractice {
-    public WebDriver driver;
-
-    @BeforeMethod
-    public void setupMethod(){
-        String browserType = ConfigurationReader.getProperty("browser");
-        driver = WebDriverFactory.getDriver(browserType);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://www.google.com");
-        driver.findElement(By.xpath("//button[@id='L2AGLb']")).click();
-    }
+//    public WebDriver driver;
+//
+//    @BeforeMethod
+//    public void setupMethod(){
+//        String browserType = ConfigurationReader.getProperty("browser");
+//        driver = WebDriverFactory.getDriver(browserType);
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//
+//    }
 
     @Test
     public void google_search_test(){
-        WebElement searchBox = driver.findElement(By.xpath("//input[@name='q']"));
+        Driver.getDriver().get("https://www.google.com");
+        Driver.getDriver().findElement(By.xpath("//button[@id='L2AGLb']")).click();
+        WebElement searchBox = Driver.getDriver().findElement(By.xpath("//input[@name='q']"));
         String searchItem = ConfigurationReader.getProperty("searchItem");
         searchBox.sendKeys(searchItem+ Keys.ENTER);
 
-        String currentTitle = driver.getTitle();
+        String currentTitle = Driver.getDriver().getTitle();
         Assert.assertEquals(searchItem+" - Google Search",currentTitle);
+        Driver.getDriver().quit();
 
     }
 
