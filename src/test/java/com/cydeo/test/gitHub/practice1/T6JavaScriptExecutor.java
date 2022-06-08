@@ -10,8 +10,21 @@ public class T6JavaScriptExecutor {
         Driver.getDriver().get("https://practice.cydeo.com/infinite_scroll");
 
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("window.scrollBy(0,750)");
+        try{
+            Thread.sleep(1000);
+        }catch(Exception ignored){
+
+        }
+        js.executeScript("window.scrollBy(0,1000)");
+
+        try{
+            Thread.sleep(1000);
+        }catch(Exception ignored){
+
+        }
+        js.executeScript("window.scrollBy(0,1000)");
 
 
+        js.executeScript("window.scrollBy(0,-750)");
     }
 }
