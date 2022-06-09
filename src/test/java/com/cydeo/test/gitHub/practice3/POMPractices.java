@@ -8,12 +8,12 @@ import org.testng.annotations.Test;
 
 public class POMPractices {
     LibraryLoginPage libraryLoginPage;
+
     @BeforeMethod
     public void setupMethod() {
-        libraryLoginPage=new LibraryLoginPage();
+        libraryLoginPage = new LibraryLoginPage();
         Driver.getDriver().get("https://library1.cydeo.com/login.html");
     }
-
 
 
     @Test
