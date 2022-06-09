@@ -15,10 +15,11 @@ public class ActionsPractices {
         WebElement cydeoLink = Driver.getDriver().findElement(By.linkText("CYDEO"));
         actions.moveToElement(cydeoLink).perform();
         actions.sendKeys(Keys.PAGE_UP, Keys.PAGE_UP).perform();
-        Driver.getDriver().close();
+        Driver.closeDriver();
     }
     @Test
     public void test2(){
         Driver.getDriver().get("https://practice.cydeo.com");
+        Driver.closeDriver();
     }
 }
