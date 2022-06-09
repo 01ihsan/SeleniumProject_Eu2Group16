@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class WebDriverWaitPractices {
     @Test
-    public void dynamicLoad7Test(){
+    public void dynamicLoad7Test() {
         Driver.getDriver().get("https://practice.cydeo.com/dynamic_loading/7");
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.titleIs("Dynamic title"));
