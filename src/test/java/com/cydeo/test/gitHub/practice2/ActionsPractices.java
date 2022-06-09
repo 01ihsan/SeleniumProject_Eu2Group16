@@ -2,6 +2,7 @@ package com.cydeo.test.gitHub.practice2;
 
 import com.cydeo.test.gitHub.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
@@ -13,5 +14,6 @@ public class ActionsPractices {
         Actions actions = new Actions(Driver.getDriver());
         WebElement cydeoLink = Driver.getDriver().findElement(By.linkText("CYDEO"));
         actions.moveToElement(cydeoLink).perform();
+        actions.sendKeys(Keys.PAGE_UP,Keys.PAGE_UP).perform();
     }
 }
