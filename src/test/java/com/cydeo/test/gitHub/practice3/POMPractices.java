@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 public class POMPractices {
     LibraryLoginPage libraryLoginPage;
+
     @Test
     public void requiredFieldErrorMessageTest() {
         Driver.getDriver().get("https://library1.cydeo.com/login.html");
@@ -15,8 +16,9 @@ public class POMPractices {
         Assert.assertTrue(libraryLoginPage.fieldRequiredErrorMessage.isDisplayed());
         Driver.closeDriver();
     }
+
     @Test
-    public void invalidEmailFormatErrorMessageTest(){
+    public void invalidEmailFormatErrorMessageTest() {
         Driver.getDriver().get("https://library1.cydeo.com/login.html");
         libraryLoginPage = new LibraryLoginPage();
         libraryLoginPage.inputUserName.sendKeys("somethingWrong");
@@ -24,8 +26,9 @@ public class POMPractices {
         Assert.assertTrue(libraryLoginPage.enterValidEmailErrorMessage.isDisplayed());
         Driver.closeDriver();
     }
+
     @Test
-    public void libraryNegativeLoginTest(){
+    public void libraryNegativeLoginTest() {
         Driver.getDriver().get("https://library1.cydeo.com/login.html");
         libraryLoginPage = new LibraryLoginPage();
         libraryLoginPage.inputUserName.sendKeys("some@thing.wrong");
