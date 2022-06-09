@@ -6,20 +6,20 @@ import org.testng.annotations.Test;
 
 public class T6JavaScriptExecutor {
     @Test
-    public void javaScriptExeTest1(){
+    public void javaScriptExeTest1() {
         Driver.getDriver().get("https://practice.cydeo.com/infinite_scroll");
 
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        try{
+        try {
             Thread.sleep(1000);
-        }catch(Exception ignored){
+        } catch (Exception ignored) {
 
         }
         js.executeScript("window.scrollBy(0,1000)");
 
-        try{
+        try {
             Thread.sleep(1000);
-        }catch(Exception ignored){
+        } catch (Exception ignored) {
 
         }
         js.executeScript("window.scrollBy(0,1000)");
