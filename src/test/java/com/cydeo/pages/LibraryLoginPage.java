@@ -7,9 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LibraryLoginPage {
 
-    public LibraryLoginPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public LibraryLoginPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
+
     @FindBy(xpath = "//input[@id='inputEmail']")
     public WebElement inputUserName;
     @FindBy(xpath = "//input[@id='inputPassword']")
