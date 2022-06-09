@@ -18,12 +18,13 @@ public class WebDriverWaitPractices {
         DynamicLoad7Page dynamicLoad7Page = new DynamicLoad7Page();
         Assert.assertTrue(dynamicLoad7Page.doneMessage.isDisplayed());
     }
+
     @Test
-    public void dynamicLoad1Test(){
+    public void dynamicLoad1Test() {
         Driver.getDriver().get("https://practice.cydeo.com/dynamic_loading/1");
-        DynamicLoad1Page dynamicLoad1Page=new DynamicLoad1Page();
+        DynamicLoad1Page dynamicLoad1Page = new DynamicLoad1Page();
         dynamicLoad1Page.startButton.click();
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         //wait.until(ExpectedConditions.invisibilityOf(dynamicLoad1Page.loadingBar));
         wait.until(ExpectedConditions.visibilityOf(dynamicLoad1Page.userName));
         Assert.assertTrue(dynamicLoad1Page.userName.isDisplayed());
