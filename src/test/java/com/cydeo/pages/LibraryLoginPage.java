@@ -14,8 +14,8 @@ public class LibraryLoginPage {
     public WebElement inputUserName;
     @FindBy(xpath = "//input[@id='inputPassword']")
     public WebElement inputPassword;
-    @FindBy(className = "btn btn-lg btn-primary btn-block")
+    @FindBy(xpath = "//button[@type='submit']")
     public WebElement signIn;
-    @FindBy(xpath = "//div[@id='inputEmail-error']")
+    @FindBy(xpath = "//div[@class='has-error']")
     public WebElement errorMessage;
 }
