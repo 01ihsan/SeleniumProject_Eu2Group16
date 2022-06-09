@@ -9,11 +9,11 @@ import org.testng.annotations.Test;
 
 public class ActionsPractices {
     @Test
-    public void task4and5Test(){
+    public void task4and5Test() {
         Driver.getDriver().get("https://practice.cydeo.com");
         Actions actions = new Actions(Driver.getDriver());
         WebElement cydeoLink = Driver.getDriver().findElement(By.linkText("CYDEO"));
         actions.moveToElement(cydeoLink).perform();
-        actions.sendKeys(Keys.PAGE_UP,Keys.PAGE_UP).perform();
+        actions.sendKeys(Keys.PAGE_UP, Keys.PAGE_UP).perform();
     }
 }
