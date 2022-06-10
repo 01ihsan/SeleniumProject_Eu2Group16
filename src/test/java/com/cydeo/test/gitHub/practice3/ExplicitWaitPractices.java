@@ -23,7 +23,6 @@ public class ExplicitWaitPractices {
     @Test
     public void removeButtonTest(){
         dynamicControlsPage.removeButton.click();
-        Actions actions = new Actions(Driver.getDriver());
 //        Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 //        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 //        wait.until(ExpectedConditions.invisibilityOf(dynamicControlsPage.loadingBar));
@@ -34,5 +33,12 @@ public class ExplicitWaitPractices {
             Assert.assertTrue(true);
         }
         Assert.assertTrue(dynamicControlsPage.okMessage.isDisplayed());
+    }
+
+    @Test
+    public void enableButtonTest(){
+        dynamicControlsPage.enableButton.click();
+        BrowserUtils.waitForInvisibilityOf(dynamicControlsPage.loadingBar);
+        Assert.assertTrue(dynamicControlsPage.inputBox.isEnabled());
     }
 }
